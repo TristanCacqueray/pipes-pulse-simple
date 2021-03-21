@@ -4,4 +4,4 @@
 [![Apache-2.0 license](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 
 Simple pipes for simple pulse audio.
-Checkout the example for usage.
+Checkout the [example](https://github.com/TristanCacqueray/pipes-pulse-simple/blob/master/example/Main.hs) for usage.

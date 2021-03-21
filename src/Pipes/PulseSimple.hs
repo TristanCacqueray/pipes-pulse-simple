@@ -13,9 +13,10 @@ module Pipes.PulseSimple
   )
 where
 
+import Control.Monad.IO.Class (MonadIO, liftIO)
 import Data.ByteString (ByteString)
 import Data.Maybe (fromMaybe)
-import Pipes (Consumer', MonadIO, Producer', await, liftIO, yield)
+import Pipes (Consumer', Producer', await, yield)
 import Pipes.Safe (MonadSafe, bracket)
 import Sound.Pulse.Simple
   ( BufferAttr (..),
@@ -43,7 +44,7 @@ sampleSize = \case
   S32 _ -> 4
   F32 _ -> 4
 
--- | Return the buts count of an one second buffer
+-- | Return the bits count of an one second buffer
 bufferSize :: SampleSpec -> Int
 bufferSize (SampleSpec fmt sampling chan) = sampleSize fmt * sampling * chan
 

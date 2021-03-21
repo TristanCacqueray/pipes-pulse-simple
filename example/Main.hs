@@ -4,6 +4,7 @@
 module Main (main) where
 
 import Control.Monad (when)
+import Control.Monad.IO.Class (MonadIO, liftIO)
 import Data.Binary.Get (getInt16le, isEmpty, runGet)
 import Data.Binary.Put (putInt16le, runPut)
 import qualified Data.ByteString as BS
@@ -11,9 +12,9 @@ import Data.ByteString.Lazy (fromStrict, toStrict)
 import Data.Time.Clock (UTCTime, diffUTCTime, getCurrentTime)
 import GHC.Float (int2Float)
 import GHC.Int (Int16)
-import Pipes
-import Pipes.PulseSimple
-import Pipes.Safe
+import Pipes (Consumer', Producer', await, runEffect, yield, (>->))
+import Pipes.PulseSimple (readPulse, writePulse)
+import Pipes.Safe (runSafeT)
 import System.Environment (getArgs)
 
 -- | Binary decoder

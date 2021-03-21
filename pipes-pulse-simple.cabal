@@ -1,8 +1,14 @@
 cabal-version:       2.4
 name:                pipes-pulse-simple
-version:             0.0.0.0
+version:             0.1.0.0
 synopsis:            Pipes for pulse-simple audio
-description:         Pipes for pulse-simple audio
+description:
+    Pipes for pulse-simple audio.
+    .
+    Use this library to produce or consume audio buffer.
+    .
+homepage:            https://github.com/TristanCacqueray/pipes-pulse-simple#readme
+bug-reports:         https://github.com/TristanCacqueray/pipes-pulse-simple/issues
 license:             Apache-2.0
 license-file:        LICENSE
 author:              Tristan de Cacqueray
@@ -12,6 +18,10 @@ category:            Sound
 build-type:          Simple
 extra-doc-files:     README.md
                      CHANGELOG.md
+
+source-repository head
+  type:                git
+  location:            https://github.com/TristanCacqueray/pipes-pulse-simple.git
 
 library
   build-depends:       base         < 5
